@@ -16,13 +16,14 @@ Create a file called `.gitrelease.json` on the root of your project to hold your
 
 key           | default      | description
 ----          | ------       | -----
-changefile    | CHANGELOG.md | set to false if you don´t want to append changes to a file
+changeFile    | CHANGELOG.md | set to false if you don´t want to append changes to a file
 usePrepend    | true         | true if you want to "append" to beggining of the file
-packagefile   | package.json | set to false if you don´t want to set package.json file version to the tag version
-cordovafile   |              | cordova config.xml file to have its widget version updated or false if no desired
-runscript     |              | a script to be executed with version and message file path as parameters
+packageFile   | package.json | set to false if you don´t want to set package.json file version to the tag version
+cordovaFile   |              | cordova config.xml file to have its widget version updated or false if no desired
+runScript     |              | a script to be executed with version and message file path as parameters
 issuePattern  | see bellow   | regex pattern to identify fixes and closes in git commits
 personalToken |              | personal token to github or gitlab
+deployCmd     |              | command to execute deploy to server
 
 This is the standard regex to identify references to issues:
 
@@ -32,7 +33,7 @@ This is the standard regex to identify references to issues:
 
 If any match is found and `personalToken` is supplied then the title of such issue will be retrieved and will replace the issue reference itself.
 
-:bangbang: :bangbang: Since the file `.gitrelease.json` can contain personal and unsafe information you MUST remember to include it into your `.gitignore` and `.npmignore` files!!! :bangbang: :bangbang:
+:bangbang: :bangbang: Since the file `.gitrelease.json` can contain personal and unsafe information you **MUST** remember to include it into your `.gitignore` and `.npmignore` files!!! :bangbang: :bangbang:
 
 ```
 # group of changes to generate messages. The arrays contain the trigger that will include message
